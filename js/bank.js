@@ -26,7 +26,7 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
     }
     else {
         alert('Enter Positive Value')
-        return;
+
     }
     //balance output calculation
     const totalBalance = addMoney(balanceOutput.innerText, depositOutput.innerText);
