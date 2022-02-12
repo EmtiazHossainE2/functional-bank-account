@@ -37,9 +37,12 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
 
 // withdraw calculation 
 document.getElementById('withdraw-btn').addEventListener('click', function () {
-    if (withdrawValue.value > 0) {
+    if (withdrawValue.value > 0 && withdrawValue.value < balanceOutput.innerText) {
         const totalWithdraw = addMoney(withdrawOutput.innerText, withdrawValue.value);
         withdrawOutput.innerText = totalWithdraw;
+    }
+    else if (withdrawValue.value > 0 && withdrawValue.value > balanceOutput.innerText) {
+        alert('You dont have sufficient balance');
     }
     else {
         alert('Enter Positive Number')
